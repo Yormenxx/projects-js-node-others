@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+.hoverNav:hover{
+    opacity: .5;
+    transition: .3s ease-in-out;
+
+}

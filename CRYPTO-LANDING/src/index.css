@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container-hero{
+  background-image: url(./assets/blur-bg.png);
+  background-position: center;
+  background-size: 50%;
+  background-repeat: no-repeat;
+}

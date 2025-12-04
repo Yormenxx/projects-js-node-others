@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.bg__color_blue{
+    background-color: rgb(3, 170, 221);
+}
+
+.text-color{
+color: rgb(3, 170, 221);
+}
+
+details {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    transition:  0.3s ease-in-out;
+  }
+
+  details[open] {
+    height: auto; /* Permite que el contenido ocupe todo el espacio necesario */
+  }
+  
+  details[open] summary::-marker {
+    content: "\25BC";
+  }
+  
+  details:not([open]) summary::-marker {
+    content: "\25BA";
+  }
+  summary {
+    cursor: pointer;
+   
+  }
+  
