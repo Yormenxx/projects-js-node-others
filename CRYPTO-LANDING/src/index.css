@@ -2,9 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
-.container-hero{
+body{
+  background-color: #111;
+}
+
+.container-hero {
+  position: relative;
+  overflow: hidden; 
+  z-index: 1; 
+}
+
+.container-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; 
   background-image: url(./assets/blur-bg.png);
   background-position: center;
-  background-size: 50%;
+  background-size: 50%; 
   background-repeat: no-repeat;
+  animation: moveCircle 10s ease-in-out infinite;
+}
+
+
+@keyframes moveCircle {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -20px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.95);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
 }
