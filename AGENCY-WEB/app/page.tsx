@@ -44,12 +44,12 @@ export default function Home() {
 
               <div className="flex justify-center items-center gap-x-4">
 
-                <Link href="/meeting" className="px-10 py-3 rounded-md  border-2 border-black dark:border-white capitalize bg-neutral-950 text-white hover:bg-white hover:text-black transition duration-200 text-sm hover:shadow-[1px_1px_rgba(0,0,0),2px_2px_rgba(0,0,0),3px_3px_rgba(0,0,0),4px_4px_rgba(0,0,0),5px_5px_0px_0px_rgba(0,0,0)] dark:shadow-[1px_1px_rgba(255,255,255),2px_2px_rgba(255,255,255),3px_3px_rgba(255,255,255),4px_4px_rgba(255,255,255),5px_5px_0px_0px_rgba(255,255,255)] ">
+                <Link href="/showcase" className="px-10 py-3 rounded-md  border-2 border-black dark:border-white capitalize bg-neutral-950 text-white hover:bg-white hover:text-black transition duration-200 text-sm hover:shadow-[1px_1px_rgba(0,0,0),2px_2px_rgba(0,0,0),3px_3px_rgba(0,0,0),4px_4px_rgba(0,0,0),5px_5px_0px_0px_rgba(0,0,0)] dark:shadow-[1px_1px_rgba(255,255,255),2px_2px_rgba(255,255,255),3px_3px_rgba(255,255,255),4px_4px_rgba(255,255,255),5px_5px_0px_0px_rgba(255,255,255)] ">
                   Book a call
                 </Link>
 
 
-                <Link href="/meeting" className="px-10 py-3 rounded-md  border-2 border-black dark:border-white capitalize bg-white text-black hover:bg-violet-500 hover:text-white transition duration-200 text-sm hover:shadow-[1px_1px_rgba(0,0,0),2px_2px_rgba(0,0,0),3px_3px_rgba(0,0,0),4px_4px_rgba(0,0,0),5px_5px_0px_0px_rgba(0,0,0)] dark:shadow-[1px_1px_rgba(255,255,255),2px_2px_rgba(255,255,255),3px_3px_rgba(255,255,255),4px_4px_rgba(255,255,255),5px_5px_0px_0px_rgba(255,255,255)] ">
+                <Link href="/showcase" className="px-10 py-3 rounded-md  border-2 border-black dark:border-white capitalize bg-white text-black hover:bg-violet-500 hover:text-white transition duration-200 text-sm hover:shadow-[1px_1px_rgba(0,0,0),2px_2px_rgba(0,0,0),3px_3px_rgba(0,0,0),4px_4px_rgba(0,0,0),5px_5px_0px_0px_rgba(0,0,0)] dark:shadow-[1px_1px_rgba(255,255,255),2px_2px_rgba(255,255,255),3px_3px_rgba(255,255,255),4px_4px_rgba(255,255,255),5px_5px_0px_0px_rgba(255,255,255)] ">
                   Showcase
                 </Link>
 
@@ -116,7 +116,7 @@ export default function Home() {
 
                   <p>Contact us today to learn more about how our digital marketing services can help your business grow and succeed online.</p>
 
-                  <Link href="/meeting" className="w-[130px] px-6 py-2 rounded-md  border-2 border-black dark:border-white capitalize bg-neutral-950 text-white hover:bg-white hover:text-black transition duration-200 text-sm hover:shadow-[1px_1px_rgba(0,0,0),2px_2px_rgba(0,0,0),3px_3px_rgba(0,0,0),4px_4px_rgba(0,0,0),5px_5px_0px_0px_rgba(0,0,0)] dark:shadow-[1px_1px_rgba(255,255,255),2px_2px_rgba(255,255,255),3px_3px_rgba(255,255,255),4px_4px_rgba(255,255,255),5px_5px_0px_0px_rgba(255,255,255)] ">
+                  <Link href="/showcase" className="w-[130px] px-6 py-2 rounded-md  border-2 border-black dark:border-white capitalize bg-neutral-950 text-white hover:bg-white hover:text-black transition duration-200 text-sm hover:shadow-[1px_1px_rgba(0,0,0),2px_2px_rgba(0,0,0),3px_3px_rgba(0,0,0),4px_4px_rgba(0,0,0),5px_5px_0px_0px_rgba(0,0,0)] dark:shadow-[1px_1px_rgba(255,255,255),2px_2px_rgba(255,255,255),3px_3px_rgba(255,255,255),4px_4px_rgba(255,255,255),5px_5px_0px_0px_rgba(255,255,255)] ">
                     Book a call
                   </Link>
 
