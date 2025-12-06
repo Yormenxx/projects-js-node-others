@@ -98,7 +98,7 @@ export default function Home() {
               <Guarantees />
 
 
-              <article className="md:flex items-center my-20 justify-center space-y-6 md:space-y-0 md:gap-x-20 xl:w-4/5 2xl:w-[68%] mx-auto px-6 md:px-0 bg-neutral-100 rounded-lg">
+              <article className="md:flex items-center my-20 justify-center space-y-6 md:space-y-0 md:gap-x-20 xl:w-4/5 2xl:w-[68%] mx-auto px-6  bg-neutral-100 rounded-lg">
 
                 <Image
                   src={"/images/proposal_illustration.png"}
@@ -111,7 +111,7 @@ export default function Home() {
                 <div className="flex flex-col gap-y-5 md:w-1/2 order-1">
 
                   <h1 className="text-lg md:text-2xl ">
-                    Let's make things happen
+                    Let`s make things happen
                   </h1>
 
                   <p>Contact us today to learn more about how our digital marketing services can help your business grow and succeed online.</p>
@@ -127,7 +127,7 @@ export default function Home() {
               </article>
 
 
-            <Footer/>
+              <Footer />
 
             </div>
 

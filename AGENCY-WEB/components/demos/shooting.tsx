@@ -6,7 +6,7 @@ import { GUARANTEES_DATA } from "../data/data";
 import Image from "next/image"
 export function ShootingStarsAndStarsBackgroundDemo() {
     return (
-        <div className="  mt-20 py-10 md:py-20 bg-neutral-900 flex flex-col items-center justify-center relative w-full px-6 md:px-0">
+        <div className=" mt-20 py-10 md:py-20 bg-neutral-900 flex flex-col items-center justify-center relative w-full px-10 ">
             <h1 className="text-3xl md:text-5xl lg:text-7xl text-center font-medium text-white capitalize  ">Built from the ground up</h1>
             <p className="text-center text-lg pb-2 px-4 text-white">All of our services are designed to help your business stand out</p>
 

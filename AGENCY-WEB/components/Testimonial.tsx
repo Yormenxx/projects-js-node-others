@@ -15,7 +15,7 @@ const Testimonial = () => {
 
                 <div className="flex flex-col gap-y-5 md:w-1/2">
                     <h1 className="text-lg md:text-2xl ">
-                        &quot;We&apos;ve been working with Bird for over 2 years and they've been amazing to work with. They've helped us grow our business and we couldn&apos;t be happier with the results. &quot;
+                        &quot;We&apos;ve been working with Bird for over 2 years and they`ve been amazing to work with. They`ve helped us grow our business and we couldn&apos;t be happier with the results. &quot;
                     </h1>
                     <div >
                         ⭐⭐⭐⭐⭐

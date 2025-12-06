@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Link as ScrollLink, Element } from "react-scroll";
+import {  Element } from "react-scroll";
 import { SERVICES_DATA } from "./data/data";
 
 const Services = () => {
@@ -17,7 +17,7 @@ const Services = () => {
                 <div className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-8 py-20 items-center place-items-center">
                     {
                         SERVICES_DATA.map(({title,desc,image},index)=>(
-                            <div key={index} className="flex flex-col items-center bg-foreground/5 px-2 py-4 rounded-lg">
+                            <div key={index} className="flex flex-col items-center bg-foreground/5 px-2 py-4 rounded-lg shadow-lg">
                                 <Image src={image} alt={title}  className="object-cover overflow-hidden w-[200px] h-[150px] " />
 
                                 <div className="w-[50%] md:w-[90%]">

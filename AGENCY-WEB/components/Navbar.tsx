@@ -24,7 +24,7 @@ const Navbar = () => {
                         <Link href={"/showcase"}>Showcase</Link>
                         <ScrollLink to="services" smooth={true} className="hover:text-blue-500 cursor-pointer">Services</ScrollLink>
                         <ScrollLink to="process" smooth={true} className="hover:text-blue-500 cursor-pointer">Process</ScrollLink>
-                        <ScrollLink to="guarantess" smooth={true} className="hover:text-blue-500 cursor-pointer">Guarantees</ScrollLink>
+                        <ScrollLink to="guarantees" smooth={true} className="hover:text-blue-500 cursor-pointer">Guarantees</ScrollLink>
                     </div>
 
                     <div className="hidden md:flex items-center gap-x-4">
