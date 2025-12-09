@@ -1,4 +1,4 @@
-import serie from "../assets/serie.png"
+import serie from "../../public/assets/serie.png"
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
 function Serie() {

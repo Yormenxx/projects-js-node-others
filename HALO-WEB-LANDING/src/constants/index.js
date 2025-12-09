@@ -1,36 +1,42 @@
-import { ImGift } from "react-icons/im"
-import halo2 from "../assets/games/Halo-2.jpg"
-import halo5 from "../assets/games/Halo-5.jpg"
-import haloA from "../assets/games/halo-aniversario.jpeg"
-import haloW from "../assets/games/Halo-wars.jpg"
+import halo2 from "../../public/assets/games/Halo-2.jpg"
+import halo5 from "../../public/assets/games/Halo-5.jpg"
+import haloA from "../../public/assets/games/halo-aniversario.jpeg"
+import haloW from "../../public/assets/games/Halo-wars.jpg"
 
 export const navItems = [
     {
+        id:1,
         name:"GamePass",
         link:"#"
 
     },
     {
+        id:2,
         name:"Juegos",
         link:"#"
     },
     {
+        id:3,
         name:"Dispositivos",
         link:"#"
     },
     {
+        id:4,
         name:"Cloud gaming",
         link:"#"
     },
     {
+        id:5,
         name:"Gaming",
         link:"#"
     },
     {
+        id:6,
         name:"Soporte",
         link:"#"
     },
     {
+        id:7,
         name:"Mi xbox",
         link:"#"
     }

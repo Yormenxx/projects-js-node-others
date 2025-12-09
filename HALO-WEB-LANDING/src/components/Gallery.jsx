@@ -1,90 +1,97 @@
-
 import ImageGallery from "react-image-gallery";
-import Forge from './Forge';
 import "react-image-gallery/styles/css/image-gallery.css";
-import gallery1 from "../assets/gallery/gallery1.jpg"
-import gallery2 from "../assets/gallery/gallery2.jpg"
-import gallery3 from "../assets/gallery/gallery3.jpg"
-import gallery4 from "../assets/gallery/gallery4.jpg"
-import gallery5 from "../assets/gallery/gallery5.jpg"
-import gallery6 from "../assets/gallery/gallery6.jpg"
-import gallery7 from "../assets/gallery/gallery7.jpg"
 import { motion } from "framer-motion";
-import { fadeIn } from "../variants";
+import gallery1 from "../../public/assets/gallery/gallery1.jpg";
+import gallery2 from "../../public/assets/gallery/gallery2.jpg";
+import gallery3 from "../../public/assets/gallery/gallery3.jpg";
+import gallery4 from "../../public/assets/gallery/gallery4.jpg";
+import gallery5 from "../../public/assets/gallery/gallery5.jpg";
+import gallery6 from "../../public/assets/gallery/gallery6.jpg";
+import gallery7 from "../../public/assets/gallery/gallery7.jpg";
 
 
+const rawImages = [gallery1, gallery2, gallery3, gallery4, gallery5, gallery6, gallery7];
 
-import Serie from './Serie';
 function Gallery() {
+   
+    const images = rawImages.map((img) => ({
+        original: img,
+        thumbnail: img,
+        originalClass: "rounded-t-xl", 
+        thumbnailClass: "rounded-lg border-none focus:outline-none",
+    }));
 
-    const images = [
-        {
-            original: `${gallery1}`,
-            thumbnail: `${gallery1}`
+   
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        show: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.2,
+            },
         },
-        {
-            original: `${gallery2}`,
-            thumbnail: `${gallery2}`
-        },
+    };
 
-        {
-            original: `${gallery3}`,
-            thumbnail: `${gallery3}`
+    const itemVariants = {
+        hidden: { opacity: 0, y: 30 },
+        show: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.6, ease: "easeOut" }
         },
+    };
 
-        {
-            original: `${gallery4}`,
-            thumbnail: `${gallery4}`
-        },
-
-        {
-            original: `${gallery5}`,
-            thumbnail: `${gallery5}`
-        },
-
-        {
-            original: `${gallery6}`,
-            thumbnail: `${gallery6}`
-        },
-        {
-            original: `${gallery7}`,
-            thumbnail: `${gallery7}`
-        },
-
-    ]
     return (
-
-        <>
-            <section className=' bgCover py-14'>
-                <motion.h1 variants={fadeIn("down", 0.1)}
+        <section className="bg-neutral-950 py-20 px-4 overflow-hidden">
+            <motion.div
+                variants={containerVariants}
                 initial="hidden"
-                whileInView={"show"}
-                vieport={{ once: false, amount: 0.5 }} className="text-3xl font-bold py-12 md:text-5xl text-center capitalize text-[#adff2f]">CONVIÉRTETE.</motion.h1>
-                <motion.p variants={fadeIn("right", 0.1)}
-                initial="hidden"
-                whileInView={"show"}
-                vieport={{ once: false, amount: 0.5 }} className="w-[70%] text-center m-auto text-white pb-8">Halo, una de las sagas más emblemáticas de los videojuegos, está más grande que nunca. Con una amplia campaña de mundo abierto y una experiencia multijugador dinámica gratuita.</motion.p>
-                <motion.div variants={fadeIn("down", 0.1)}
-                initial="hidden"
-                whileInView={"show"}
-                vieport={{ once: false, amount: 0.5 }}>
-                    <ImageGallery 
-                        showPlayButton={false}
-                        showFullscreenButton={false}
-                        showNav={false}
-                        slideInterval={3000}
-                        items={images} />
+                whileInView="show"
+                viewport={{ once: false, amount: 0.2 }} 
+                className="max-w-7xl mx-auto flex flex-col items-center"
+            >
 
+     
+                <motion.h1
+                    variants={itemVariants}
+                    className="text-4xl md:text-6xl font-bold mb-6 text-center text-[#adff2f] tracking-widest uppercase"
+                >
+                    Conviértete
+                </motion.h1>
 
+          
+                <motion.p
+                    variants={itemVariants}
+                    className="w-full md:w-2/3 text-center text-neutral-300 text-lg mb-12 leading-relaxed"
+                >
+                    Halo, una de las sagas más emblemáticas de los videojuegos, está más grande que nunca.
+                    Con una amplia campaña de mundo abierto y una experiencia multijugador dinámica gratuita.
+                </motion.p>
+
+               
+                <motion.div
+                    variants={itemVariants}
+                    className="w-full max-w-5xl relative z-10"
+                >
+                    <div className="border border-neutral-800 p-2 rounded-2xl bg-neutral-900 shadow-2xl shadow-[#adff2f]/10">
+                        <ImageGallery
+                            items={images}
+                            showPlayButton={false}
+                            showFullscreenButton={true} 
+                            showNav={true} 
+                            autoPlay={true} 
+                            slideInterval={4000}
+                            slideDuration={500}
+                            thumbnailPosition="bottom"
+                            showThumbnails={true}
+                            additionalClass="custom-gallery-class"  
+                        />
+                    </div>
                 </motion.div>
 
-
-                <Forge />
-                <Serie />
-            </section>
-        </>
-
-    )
+            </motion.div>
+        </section>
+    );
 }
 
-export default Gallery
+export default Gallery;

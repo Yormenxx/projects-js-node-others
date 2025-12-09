@@ -1,4 +1,4 @@
-import forge from "../assets/forge.png"
+import forge from "../../public/assets/forge.png"
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
 function Forge() {

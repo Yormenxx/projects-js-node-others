@@ -1,22 +1,23 @@
+
+import Get from "./components/Get"
 import Navbar from "./components/Navbar"
-import Hero from "./components/Hero"
 import Games from "./components/Games"
 import Gallery from "./components/Gallery"
-import Xbox from "./components/Xbox"
-import BuyGame from "./components/BuyGame"
-import Footer from "./components/Footer"
+// import Xbox from "./components/Xbox"
+// import BuyGame from "./components/BuyGame"
+// import Footer from "./components/Footer"
 function App() {
   
 
   return (
     <>
       <Navbar/>
-      <Hero/>
+      <Get/>
       <Games/>
       <Gallery/>
-      <Xbox/>
-      <BuyGame/>
-      <Footer/>
+      {/* <Xbox/> */}
+      {/* <BuyGame/> */}
+      {/* <Footer/> */}
     </>
   )
 }

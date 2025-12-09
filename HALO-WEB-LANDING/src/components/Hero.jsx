@@ -1,24 +1,113 @@
 import { motion } from "framer-motion";
-import {fadeIn} from "../variants";
 
-function Hero() {
+const Hero = () => {
+
+  const containerVariants = {
+    hidden: {
+      opacity: 0,
+      x: 50
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.7,
+        ease: "easeOut",
+
+        when: "beforeChildren",
+        staggerChildren: 0.15
+      }
+    }
+  };
+
+
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      y: 20
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const buttonHoverVariants = {
+    hover: {
+      scale: 1.05,
+      boxShadow: "0px 0px 15px rgb(173, 255, 47, 0.4)",
+      transition: { type: "spring", stiffness: 300, damping: 15 }
+    },
+    tap: { scale: 0.95 }
+  };
   return (
-    <section className='relative w-full h-72 control flex justify-end items-center'>
+    <section >
 
-    <motion.div
-    variants={fadeIn("up",0.2)} 
-    initial="hidden"
-    whileInView={"show"}
-    vieport={{once:false,amount:0.7}}
-    className='max-w-[500px] px-5 text-center md:text-left'>
-        <h2 className='text-white text-2xl md:text-5xl font-bold capitalize'> Conviértete en elite.</h2>
-        <p className='w-full text-white'> Entra en la armadura del mayor heroe de la humanidad con el Control inálambrico Xbox Elite Series2: Edicion limitada Halo infinite</p>
-        <a href="" className='text-[#adff2f] capitalize text-sm hover:opacity-80 ease-in-out duration-200'>Más información</a>
-    </motion.div>
+      <div className="w-full h-screen flex items-center justify-center md:justify-end">
+
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="md:mr-8  flex flex-col items-center space-y-5 max-w-md text-white backdrop-blur-2xl py-8 px-6 rounded-xl text-center border border-white/10 shadow-2xl"
+        >
+
+
+          <motion.h1 variants={itemVariants} className="text-4xl font-bold leading-tight">
+            Halo: The Master Chief Collection
+          </motion.h1>
+
+
+
+          <motion.p variants={itemVariants} className="text-neutral-200">
+            En honor al icónico héroe y a su épico viaje, la historia completa del Master Chief se une en Halo: The Master Chief Collection.
+          </motion.p>
+
+
+          <motion.div variants={itemVariants} className="font-bold text-lg flex space-x-4 text-neutral-300">
+            <a href="#" className="hover:text-[#adff2f] transition-colors">Xbox Console</a>
+            <span>|</span>
+            <a href="#" className="hover:text-[#adff2f] transition-colors">Xbox on PC</a>
+          </motion.div>
+
+
+          <div className="flex flex-col items-center mt-4 space-y-4 w-full">
+
+            {/* Botón Principal */}
+            <motion.a
+              href="#"
+              // SOLUCIÓN: Fusionamos los dos objetos con '...' (spread operator)
+              variants={{ ...itemVariants, ...buttonHoverVariants }}
+              whileHover="hover"
+              whileTap="tap"
+              className="w-full max-w-[250px] text-center text-xl bg-[#adff2f] text-[#026b07] font-bold px-4 py-2 rounded-full"
+            >
+              Unirse a Game Pass
+            </motion.a>
+
+            {/* Botón Secundario */}
+            <motion.a
+              href="#"
+              // SOLUCIÓN: Hacemos lo mismo aquí
+              variants={{ ...itemVariants, ...buttonHoverVariants }}
+              whileHover="hover"
+              whileTap="tap"
+              className="w-full max-w-[250px] text-center text-xl bg-transparent border-2 border-[#adff2f] text-[#adff2f] font-bold px-4 py-2 rounded-full hover:bg-[#adff2f]/10 transition-colors"
+            >
+              Consíguelo ahora
+            </motion.a>
+
+          </div>
+        </motion.div>
+      </div>
+
 
 
     </section>
-
   )
 }
 
