@@ -3,7 +3,7 @@ import Get from "./components/Get"
 import Navbar from "./components/Navbar"
 import Games from "./components/Games"
 import Gallery from "./components/Gallery"
-// import Xbox from "./components/Xbox"
+import Xbox from "./components/Xbox"
 // import BuyGame from "./components/BuyGame"
 // import Footer from "./components/Footer"
 function App() {
@@ -15,7 +15,7 @@ function App() {
       <Get/>
       <Games/>
       <Gallery/>
-      {/* <Xbox/> */}
+      <Xbox/>
       {/* <BuyGame/> */}
       {/* <Footer/> */}
     </>
