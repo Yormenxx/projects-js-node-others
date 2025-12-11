@@ -5,7 +5,7 @@ import Games from "./components/Games"
 import Gallery from "./components/Gallery"
 import Xbox from "./components/Xbox"
 import BuyGame from "./components/BuyGame"
-// import Footer from "./components/Footer"
+import Footer from "./components/Footer"
 function App() {
   
 
@@ -17,7 +17,7 @@ function App() {
       <Gallery/>
       <Xbox/>
       <BuyGame/>
-      {/* <Footer/> */}
+      <Footer/>
     </>
   )
 }

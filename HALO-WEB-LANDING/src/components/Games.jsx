@@ -1,6 +1,6 @@
 import { gamesItems } from "../constants";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react"; // Asegúrate de tener lucide-react o usa otro ícono
+import { ArrowRight } from "lucide-react"; 
 
 const Games = () => {
 

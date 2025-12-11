@@ -3,20 +3,19 @@ import box from "../../public/assets/box.svg"
 import kk from "../../public/assets/kk.svg"
 import fps from "../../public/assets/fps.svg"
 import { motion } from "framer-motion";
-import { fadeIn } from "../variants"; // Asumo que 'fadeIn' maneja las direcciones
+import { fadeIn } from "../variants"; 
 
-// Variantes específicas para la aparición de los íconos (FPS, 4K, Box)
+
 const iconContainerVariants = {
-    // Estado que inicia la secuencia
+ 
     show: {
         transition: {
-            staggerChildren: 0.15, // Retraso entre la aparición de cada ícono
-            delayChildren: 0.3,    // Retraso inicial antes de que aparezca el primer ícono
+            staggerChildren: 0.15, 
+            delayChildren: 0.3,    
         },
     },
 };
 
-// Variantes para cada ícono individual
 const iconItemVariants = {
     hidden: { 
         opacity: 0, 

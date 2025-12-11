@@ -77,10 +77,10 @@ const Hero = () => {
 
           <div className="flex flex-col items-center mt-4 space-y-4 w-full">
 
-            {/* Botón Principal */}
+           
             <motion.a
               href="#"
-              // SOLUCIÓN: Fusionamos los dos objetos con '...' (spread operator)
+            
               variants={{ ...itemVariants, ...buttonHoverVariants }}
               whileHover="hover"
               whileTap="tap"
@@ -89,10 +89,10 @@ const Hero = () => {
               Unirse a Game Pass
             </motion.a>
 
-            {/* Botón Secundario */}
+          
             <motion.a
               href="#"
-              // SOLUCIÓN: Hacemos lo mismo aquí
+        
               variants={{ ...itemVariants, ...buttonHoverVariants }}
               whileHover="hover"
               whileTap="tap"
