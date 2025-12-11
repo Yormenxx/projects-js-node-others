@@ -1,19 +1,20 @@
-export const fadeIn = (direction, delay)=>{
-    return{
-        hidden:{
-            y: direction == "up" ? 40 : direction == "down" ? -40 : 0,
-            x: direction == "left" ? 20 : direction == "right" ? -40 : 0,
+// Ejemplo de la función fadeIn en tu archivo variants.js
+export const fadeIn = (direction, delay) => {
+    return {
+        hidden: {
+            // ... (tu lógica para la dirección)
         },
-        show:{
-            y:0,
-            x:0,
-            opacity:1,
-            transition:{
-                type:"tween",
-                duration:1,
-                delay,
-                ease:[0.2,0.2,0.2,0.7]
-            }
-        }
-    }
-}
+        show: {
+            // ... (tu lógica para la dirección)
+            transition: {
+                // Mejora la fluidez del movimiento
+                type: "spring",
+                stiffness: 150,
+                damping: 18, 
+                delay: delay,
+                duration: 0.8, // Puedes ajustar esto
+                ease: "easeOut",
+            },
+        },
+    };
+};
