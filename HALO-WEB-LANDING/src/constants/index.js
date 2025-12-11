@@ -1,7 +1,7 @@
-import halo2 from "../../public/assets/games/Halo-2.jpg"
-import halo5 from "../../public/assets/games/Halo-5.jpg"
-import haloA from "../../public/assets/games/halo-aniversario.jpeg"
-import haloW from "../../public/assets/games/halo-wars.jpg"
+import halo2 from "/assets/games/Halo-2.jpg"
+import halo5 from "/assets/games/Halo-5.jpg"
+import haloA from "/assets/games/halo-aniversario.jpeg"
+import haloW from "/assets/games/halo-wars.jpg"
 
 export const navItems = [
     {

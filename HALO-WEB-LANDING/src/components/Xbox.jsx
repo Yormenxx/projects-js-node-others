@@ -1,7 +1,7 @@
-import xs from "../../public/assets/xs-original.png"
-import box from "../../public/assets/box.svg"
-import kk from "../../public/assets/kk.svg"
-import fps from "../../public/assets/fps.svg"
+import xs from "/assets/xs-original.png"
+import box from "/assets/box.svg"
+import kk from "/assets/kk.svg"
+import fps from "/assets/fps.svg"
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants"; 
 

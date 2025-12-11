@@ -1,4 +1,4 @@
-import master from "../../public/assets/master.jpg"
+import master from "/assets/master.jpg"
 import { motion } from "framer-motion";
 
 
