@@ -314,5 +314,5 @@ export const FOOTER_CONTENT = {
   ],
   platformsText:
     "Streaming Platforms | Twitch | YouTube | Discord | Facebook Gaming",
-  copyrightText: "© 2024 Streamerzz, Inc. All rights reserved.",
+  copyrightText: "© 2025 Mojodeco, Inc. All rights reserved.",
 };

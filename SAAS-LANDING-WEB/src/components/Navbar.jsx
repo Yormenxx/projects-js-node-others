@@ -1,85 +1,136 @@
-import { useState } from "react"
-import logo from "../assets/logo.png"
-import { NAV_ITEMS } from "../constants"
-import { RiCloseFill, RiMenu3Line } from "@remixicon/react"
-
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion"; 
+import logo from "../assets/logo.png";
+import { NAV_ITEMS } from "../constants";
+import { RiCloseFill, RiMenu3Line } from "@remixicon/react";
 
 function Navbar() {
-
-  const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false)
+  const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
 
   const toggleMenu = () => {
-    setMobileDrawerOpen(!mobileDrawerOpen)
-  }
+    setMobileDrawerOpen(!mobileDrawerOpen);
+  };
+
+  
+  const menuVariants = {
+    hidden: { opacity: 0, height: 0, transition: { when: "afterChildren" } },
+    visible: {
+      opacity: 1,
+      height: "auto",
+      transition: {
+        when: "beforeChildren",
+        staggerChildren: 0.1, 
+      },
+    },
+    exit: {
+      opacity: 0,
+      height: 0,
+      transition: { duration: 0.3 }
+    }
+  };
+
+
+  const itemVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: { opacity: 1, x: 0 },
+  };
 
   return (
-    <>
-      <nav className=" relative z-50 m-3" >
 
-        <div className="text-neutral-400 max-w-7xl mx-auto px-4 py-3 flex justify-between items-center rounded-lg border border-neutral-900">
+    <nav className="sticky top-0 z-50 py-3 backdrop-blur-lg border-b border-neutral-700/80">
 
+      <div className="container px-4 mx-auto relative text-sm">
+        <div className="flex justify-between items-center">
 
-          <img src={logo} width={120} height={24} alt="logo" />
+      
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="flex items-center flex-shrink-0"
+          >
+            <img src={logo} className="h-8 w-auto mr-2" alt="logo" />
+          
+          </motion.div>
 
+        
+          <ul className="hidden lg:flex ml-14 space-x-12">
+            {NAV_ITEMS.map((item, index) => (
+              <motion.li
+                key={index}
+                whileHover={{ scale: 1.1, color: "#3b82f6" }} 
+                className="text-neutral-300 hover:text-white transition-colors"
+              >
+                <a href={item.link}>{item.title}</a>
+              </motion.li>
+            ))}
+          </ul>
 
-          <div>
-            <ul className="hidden md:flex space-x-6">
-              {
-                NAV_ITEMS.map((item, index) => (
-                  <li key={index}>
-                    <a className="hover:text-blue-500 duration-150 ease-in-out" href={item.link}>{item.title}</a>
-                  </li>
-                ))
-              }
-            </ul>
+       
+          <div className="hidden lg:flex justify-center space-x-4 items-center">
+            <a href="#" className="py-2 px-3 border border-transparent hover:border-neutral-500 rounded-md transition text-neutral-300 hover:text-white">
+              Login
+            </a>
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              href="#"
+              className="bg-gradient-to-r from-orange-500 to-orange-800 py-2 px-3 rounded-md text-white shadow-lg"
+            >
+              Start free trial
+            </motion.a>
           </div>
 
-          <div className="hidden md:flex space-x-4 items-center">
-            <a href="" className="hover:text-neutral-100">Login</a>
-            <a href="" className="border border-neutral-500 text-white py-2 px-4 rounded-lg hover:bg-neutral-700 transition">Get a demo</a>
-            <a href="" className="bg-blue-800 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition">Star free trial</a>
-          </div>
-
-
-          <div className="md:hidden">
-
-            <button onClick={toggleMenu} className="text-white cursor-pointer ">
+     
+          <div className="lg:hidden md:flex flex-col justify-end">
+            <button onClick={toggleMenu} className="text-white focus:outline-none">
               {mobileDrawerOpen ? <RiCloseFill /> : <RiMenu3Line />}
             </button>
-
           </div>
-
         </div>
 
-        {
-          mobileDrawerOpen && (
-
-            <div className="md:hidden bg-neutral-900/60 backdrop-blur-2xl border border-neutral-800 p-4 rounded-xl mt-2">
-              <ul className="flex flex-col space-y-4">
-                {
-                  NAV_ITEMS.map((item, index) => (
-                    <li key={index}>
-                      <a className="hover:text-blue-500 text-neutral-300 duration-150 ease-in-out" href={item.link}>{item.title}</a>
-                    </li>
-                  ))
-                }
-
-                <a href="" className="hover:text-neutral-100 text-blue-500">Login</a>
-                <a href="" className="border border-neutral-500 text-white py-2 px-4 rounded-lg hover:bg-neutral-700 transition">Get a demo</a>
-                <a href="" className="bg-blue-800 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition">Star free trial</a>
+     
+        <AnimatePresence>
+          {mobileDrawerOpen && (
+            <motion.div
+              variants={menuVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              className="fixed right-0 left-0 top-full z-20 bg-neutral-900 w-full p-8 flex flex-col justify-center items-center border-b border-neutral-800 lg:hidden overflow-hidden"
+            >
+              <ul>
+                {NAV_ITEMS.map((item, index) => (
+                  <motion.li
+                    key={index}
+                    variants={itemVariants}
+                    className="py-4 text-center"
+                  >
+                    <a
+                      href={item.link}
+                      onClick={() => setMobileDrawerOpen(false)} 
+                      className="text-xl text-neutral-300 hover:text-orange-500 transition-colors"
+                    >
+                      {item.title}
+                    </a>
+                  </motion.li>
+                ))}
               </ul>
 
-            </div>
-
-
-
-          )
-        }
-
-      </nav>
-
-    </>
-  )
+              <motion.div variants={itemVariants} className="flex space-x-6 mt-6">
+                <a href="#" className="py-2 px-3 border border-neutral-700 rounded-md text-neutral-300">
+                  Login
+                </a>
+                <a href="#" className="py-2 px-3 rounded-md bg-gradient-to-r from-orange-500 to-orange-800 text-white">
+                  Start free trial
+                </a>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </nav>
+  );
 }
 
-export default Navbar
+export default Navbar;
