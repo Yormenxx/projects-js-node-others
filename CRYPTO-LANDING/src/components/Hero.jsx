@@ -32,7 +32,7 @@ const Hero = () => {
         }
     }
     return (
-        <div className='px-15'>
+        <div className='px-15 overflow-hidden  bg-transparent '>
             <section className=' container-hero '>
 
                 <div className='flex flex-col items-center justify-center md:space-x-10 z-20 md:flex-row py-5'>
@@ -63,7 +63,7 @@ const Hero = () => {
                         initial="hidden"
                         whileInView="visible" 
                         viewport={{ once: false, amount: 0.4 }}
-                        className="max-w-xl text-center md:text-left container py-5 text-white space-y-6 "
+                        className="max-w-xl text-center md:text-left container py-15 text-white space-y-6 "
                     >
 
                         <motion.h2 variants={textItemVars} className='font-bold md:text-6xl text-4xl leading-tight'>

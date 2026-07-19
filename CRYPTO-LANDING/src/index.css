@@ -8,8 +8,8 @@ body{
 
 .container-hero {
   position: relative;
-  overflow: hidden; 
   z-index: 1; 
+  padding: 20px 0px;
 }
 
 .container-hero::before {

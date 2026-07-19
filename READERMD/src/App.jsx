@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkBreaks from 'remark-breaks'
 import remarkGfm from 'remark-gfm'
@@ -10,14 +10,37 @@ import Toolbar from './components/Toolbar';
 import FloatingActions from './components/FloatingActions';
 import 'katex/dist/katex.min.css';
 
+const STORAGE_KEY = 'markdown-editor-content';
+
 function App() {
-  const [markdown, setMarkdown] = useState('# Hola mundo');
+  const [markdown, setMarkdown] = useState(() => {
+    try {
+      return localStorage.getItem(STORAGE_KEY) ?? '# Hola mundo';
+    } catch {
+      return '# Hola mundo';
+    }
+  });
   const [syncEnabled, setSyncEnabled] = useState(false);
   const [fileName, setFileName] = useState('');
 
   const editorRef = useRef(null);
   const previewRef = useRef(null);
   const activeSide = useRef(null);
+  const saveTimeout = useRef(null);
+
+  useEffect(() => {
+    if (saveTimeout.current) clearTimeout(saveTimeout.current);
+
+    saveTimeout.current = setTimeout(() => {
+      try {
+        localStorage.setItem(STORAGE_KEY, markdown);
+      } catch (err) {
+        console.error('No se pudo guardar el contenido:', err);
+      }
+    }, 400);
+
+    return () => clearTimeout(saveTimeout.current);
+  }, [markdown]);
 
   const handleScroll = (source, target) => {
     if (!syncEnabled || activeSide.current !== source) return;

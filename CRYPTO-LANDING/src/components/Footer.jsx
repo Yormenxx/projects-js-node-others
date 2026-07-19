@@ -15,7 +15,7 @@ const Footer = () => {
                         <p className="text-sm md:text-base"> Google Play Store </p>
                     </div>
                 </a>
-                <a href="#" className="flex items-center border  rounded-lg px-4 py-2 w-44 mx-2 hover:opacity-20 duration-150 ease-in-out">
+                <a href="#" className="flex items-center border  rounded-lg px-4 py-2 w-52 mx-2 hover:opacity-20 duration-150 ease-in-out">
                     <img src="https://cdn-icons-png.flaticon.com/512/888/888841.png" className="w-7 md:w-8"/>
                     <div className="text-left ml-3">
                         <p className='text-xs text-gray-200'>Download on </p>
