@@ -1,0 +1,97 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+
+:root {
+  color-scheme: dark; 
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100dvh;
+  width: 100vw;
+  overflow: hidden; 
+  background-color: #0a0a0a; 
+}
+@media print {
+  
+  header, .sidebar, .toolbar, .floating-buttons {
+    display: none !important;
+  }
+  
+  .preview-container {
+    width: 100% !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+@layer base {
+
+
+    .prose code {
+        @apply bg-neutral-800 text-red-400 px-1.5 py-0.5 rounded font-mono text-sm;
+
+        &::before,
+        &::after {
+            content: "" !important;
+        }
+    }
+
+    .prose table {
+        @apply w-full border-collapse my-4;
+    }
+
+    .prose th,
+    .prose td {
+        @apply border border-neutral-700 p-2 text-left;
+    }
+
+    .prose h1 {
+        @apply text-3xl font-bold mb-4;
+    }
+
+    .prose h2 {
+        @apply text-2xl font-semibold mb-3;
+    }
+
+
+    :not(html):not(body)::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+
+    :not(html):not(body)::-webkit-scrollbar-track {
+        background: #171717;
+    }
+
+    :not(html):not(body)::-webkit-scrollbar-thumb {
+        background: #404040;
+        border-radius: 10px;
+        border: 2px solid #171717;
+    }
+
+    :not(html):not(body)::-webkit-scrollbar-thumb:hover {
+        background: #525252;
+    }
+
+    *:not(html):not(body) {
+        scrollbar-width: thin;
+        scrollbar-color: #404040 #171717;
+    }
+
+
+    html::-webkit-scrollbar,
+    body::-webkit-scrollbar {
+        display: none;
+    }
+
+    html,
+    body {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+}
