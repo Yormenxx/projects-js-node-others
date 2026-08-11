@@ -18,6 +18,15 @@ export default function Header({ markdown, setMarkdown, syncEnabled, setSyncEnab
     setTimeout(() => setCopied(false), 2000);
   };
 
+  const onFileOpen = (e) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const nameWithoutExt = file.name.replace(/\.[^/.]+$/, ''); 
+      setFileName(nameWithoutExt);
+    }
+    handleOpen(e); 
+  };
+
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) setIsSidebarOpen(false);
@@ -32,7 +41,7 @@ export default function Header({ markdown, setMarkdown, syncEnabled, setSyncEnab
       <div>
         <header className="h-18 bg-neutral-900 border-b border-neutral-800 flex items-center justify-evenly space-x-2 md:justify-between px-4 text-white z-40 relative">
 
-       
+
           <div className="flex items-center gap-2">
             <button
               onClick={() => setIsSidebarOpen(true)}
@@ -46,7 +55,7 @@ export default function Header({ markdown, setMarkdown, syncEnabled, setSyncEnab
             </div>
           </div>
 
-          
+
           <div className="flex-1 max-w-65 sm:max-w-md flex items-center gap-2 bg-neutral-800/50 px-3 py-1.5 rounded-lg border border-neutral-700">
             <FileText size={16} className="text-neutral-500 hidden sm:block" />
             <input
@@ -59,7 +68,7 @@ export default function Header({ markdown, setMarkdown, syncEnabled, setSyncEnab
             <span className="text-neutral-600 text-xs font-mono hidden sm:block">.md</span>
           </div>
 
-        
+
           <div className="hidden md:flex items-center gap-2">
             <button
               onClick={() => setSyncEnabled(!syncEnabled)} title="Sincronizar"
@@ -75,7 +84,7 @@ export default function Header({ markdown, setMarkdown, syncEnabled, setSyncEnab
             <div className="flex items-center gap-1">
               <label className="p-2 hover:bg-neutral-800 rounded-md cursor-pointer text-neutral-400 hover:text-white" title="Abrir">
                 <FolderOpen size={18} />
-                <input type="file" accept=".md,.txt" onChange={handleOpen} className="hidden" />
+                <input type="file" accept=".md,.txt" onChange={onFileOpen} className="hidden"/>
               </label>
 
               <button onClick={onCopy} title='Copiar Md' className="p-2 hover:bg-neutral-800 cursor-pointer rounded-md text-neutral-400 hover:text-white">
@@ -96,10 +105,10 @@ export default function Header({ markdown, setMarkdown, syncEnabled, setSyncEnab
           </div>
         </header>
 
-       
+
         {isSidebarOpen && (
           <>
-           
+
             <div
               className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 md:hidden"
               onClick={() => setIsSidebarOpen(false)}
