@@ -161,7 +161,10 @@ function App() {
 
       <FloatingActions previewRef={previewRef}
         fileName={fileName}
-         />
+        markdown={markdown}        
+        setMarkdown={setMarkdown}  
+      />
+
     </>
   );
 }
